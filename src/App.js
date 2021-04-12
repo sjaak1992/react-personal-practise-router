@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Nav from './Nav';
-import Shop from './Shop';
+import Mytodo from './Mytodo';
 import About from './About';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
@@ -13,7 +13,7 @@ function App() {
                 <Nav/>
                 <switch>
                     <Route path="/about" component={About}/>
-                    <Route path="/shop" component={Shop}/>
+                    <Route path="/todo" component={Mytodo}/>
                 </switch>
             </div>
         </Router>
