@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Nav from './Nav';
 import Mytodo from './Mytodo';
@@ -9,13 +9,21 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 
 function App() {
+    const [isAuthenticated, toggleIsAuthenticated] = useState(false)
+
+    console.log("IS IT REALLY?", isAuthenticated)
+
     return (
         <Router>
             <div className="App">
-                <Nav/>
+                <Nav isAutheticated = {isAuthenticated}/>
                 <Switch>
-                    <Route path="/about" component={About}/>
-                    <Route path="/login" component={Login}/>
+                    <Route path="/about">
+                        <About/>
+                    </Route>
+                    <Route path="/login">
+                        <Login toggleIsAuthenticated = {toggleIsAuthenticated} /> {/*de functie meegeven aan de login page */}
+                    </Route>
                     <Route path="/todo" component={Mytodo}/>
                     <Route path="/secret" component={Secret}/>
                 </Switch>

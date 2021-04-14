@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Link} from "react-router-dom";
 
-function Nav() {
+function Nav(props) {
     return (
         <nav>
             <h3>Logo</h3>
@@ -16,9 +16,13 @@ function Nav() {
                 <Link to ='/todo'>
                     <li> My to do list</li>
                 </Link>
+
+                {props.isAutheticated === true &&
                 <Link to ='/secret'>
                     <li> Secret page</li>
                 </Link>
+                }
+
             </ul>
         </nav>
     );
