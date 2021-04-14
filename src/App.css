@@ -1,5 +1,12 @@
 body {
   background-color: antiquewhite;
+  color: darkseagreen;
+}
+
+button {
+background-color: cadetblue;
+  color: white;
+  border-radius: 10%;
 }
 
 .App {
@@ -13,6 +20,7 @@ nav {
   min-height: 10vh;
   background-color: coral;
   color:white;
+  text-decoration: none;
 }
 .nav-links {
   width: 50%;
@@ -20,4 +28,6 @@ nav {
   justify-content: space-around;
   align-items: center;
  list-style: none;
+
+
 }

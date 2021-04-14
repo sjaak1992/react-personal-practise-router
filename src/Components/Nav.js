@@ -1,8 +1,12 @@
 import React from 'react';
-import './App.css';
-import {Link} from "react-router-dom";
+import '../App.css';
+import { Link } from "react-router-dom";
+import {useLogin} from "../LoginContext";
 
-function Nav(props) {
+function Nav() {
+    const [isAuthenticated, ] = useLogin()
+    // const [,toggleIsAuthenticated] = useContext(LoginContext)
+
     return (
         <nav>
             <h3>Logo</h3>
@@ -17,11 +21,13 @@ function Nav(props) {
                     <li> My to do list</li>
                 </Link>
 
-                {props.isAutheticated === true &&
-                <Link to ='/secret'>
+
+                {isAuthenticated === true &&
+                <Link to='/secret'>
                     <li> Secret page</li>
                 </Link>
                 }
+
 
             </ul>
         </nav>
