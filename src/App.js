@@ -4,45 +4,42 @@ import ToDo from './Components/Mytodo';
 import About from './Components/About';
 import Secret from "./Components/Secret";
 import Login from "./Components/Login";
-import { LoginProvider } from "./LoginContext";
+import { useLogin } from "./LoginContext";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-
+import {Redirect} from "react-router";
 
 
 function App() {
-    // const [isAuthenticated, toggleIsAuthenticated] = useState(false)
+    const [isAuthenticated, toggleIsAuthenticated] = useLogin();
     // console.log("IS IT REALLY?", isAuthenticated)
 
     return (
 
-        <Router>
-            <LoginProvider>
-            <div className="App">
-                {/*<Nav isAutheticated = {isAuthenticated}/>*/}
-                <Nav/>
-                <Switch>
 
-                    <Route path="/about">
-                        <About/>
-                    </Route>
+        <div className="App">
+            {/*<Nav isAutheticated = {isAuthenticated}/>*/}
+            <Nav/>
+            <Switch>
 
-                    <Route path="/login">
-                        {/*<Login toggleIsAuthenticated = {toggleIsAuthenticated} /> /!*de functie meegeven aan de login page *!/*/}
+                <Route path="/about">
+                    <About/>
+                </Route>
+
+                <Route path="/login">
+                    {/*<Login toggleIsAuthenticated = {toggleIsAuthenticated} /> /!*de functie meegeven aan de login page *!/*/}
                     <Login/>
-                    </Route>
+                </Route>
 
-                    <Route path="/todo">
-                        <ToDo />
-                    </Route>
+                <Route path="/todo">
+                    <ToDo/>
+                </Route>
 
-                    <Route path="/secret">
-                        <Secret/>
-                    </Route>
+                <Route path="/secret">
+                    {isAuthenticated ? <Secret/> : <Redirect to={"/login"}/> }
+                </Route>
 
-                </Switch>
-            </div>
-        </LoginProvider>
-        </Router>
+            </Switch>
+        </div>
 
     );
 }
