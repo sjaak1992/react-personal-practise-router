@@ -32,3 +32,7 @@ nav {
 
 
 }
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
