@@ -1,10 +1,10 @@
 body {
-  background-color: antiquewhite;
-  color: darkseagreen;
+  background-color: #8086FF ;
+  color: #E6C74C;
 }
 
 button {
-background-color: cadetblue;
+background-color: #E6C74C;
   color: white;
   border-radius: 10%;
 
@@ -13,6 +13,8 @@ background-color: cadetblue;
 .App {
   text-align: center;
 }
+
+
 
 nav {
   display: flex;
@@ -35,4 +37,9 @@ nav {
 .text-link {
   color: inherit;
   text-decoration: inherit;
+}
+
+.to-do-title {
+  text-transform: lowercase;
+  color: #E6C758;
 }

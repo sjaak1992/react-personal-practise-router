@@ -1,16 +1,33 @@
-import React from "react";
+// import React, {useState} from "react";
 import '../App.css';
 import {useForm} from "react-hook-form";
+// import axios from "axios";
+
 
 function RegisterPage () {
+    // const [registerSucces, toggleRegister] = useState(false);
     const { handleSubmit, register } = useForm();
 
-    function onSubmitHandler (data) {
-        console.log(data);
-    }
 
-    function handleClickSignUp () {
-        alert("You are now registered!");
+
+    // les novi: nep server en jwt token
+    async function onSubmitHandler (data) {
+        console.log(data);
+//        try {
+//     const result = await axios.post (" http://localhost:3000/register", {
+//         username: data.username,
+//         password: data.password
+//     })
+//
+//       toggleRegister(true);
+//        } catch(e)
+// {
+//     console.error(e)
+
+}
+
+    function handleClickSignUp (data) {
+        console.log(data)
     }
     return (
         <div>
@@ -26,7 +43,7 @@ function RegisterPage () {
                     />
                     <input
                         type="email"
-                        name="email-input"
+                        name="email"
                         id="email-input"
                         placeholder="e-mail"
                         {...register("email", { required: true })}
@@ -37,7 +54,10 @@ function RegisterPage () {
                         id="password-input"
                         placeholder="wachtwoord"
                     />
+
                     <button onClick={handleClickSignUp}>registreer nu!</button>
+                    {/*{registerSucces === true && <p> Registreren is gelukt, wooohooo</p>}*/}
+
                 </form>
             </div>
         </div>

@@ -19,9 +19,10 @@ function Nav() {
                     <li> Home </li>
                 </Link>
 
-                <Link to ='/todo' className='text-link'>
-                    <li> Register</li>
+                <Link to ='/register' className='text-link'>
+                    <li> Register </li>
                 </Link>
+
 
                 <Link to='/about' className='text-link'>
                     <li> About</li>

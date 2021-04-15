@@ -26,7 +26,7 @@ function ToDo() {
     return (
 
         <div className="App">
-            <h1> My To Do list:</h1>
+            <h1 className="to-do-title"> My To Do list:</h1>
             <p>
 
                 {toDoes}
